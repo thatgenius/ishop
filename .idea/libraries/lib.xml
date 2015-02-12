@@ -1,0 +1,26 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/untitled1/WEB-INF/lib/jstl-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/untitled1/WEB-INF/lib/spring-security-web-3.2.0.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/untitled1/WEB-INF/lib/spring-security-taglibs-3.2.0.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/untitled1/WEB-INF/lib/spring-beans-4.1.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/untitled1/WEB-INF/lib/spring-webmvc-4.1.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/untitled1/WEB-INF/lib/spring-jdbc-4.1.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/untitled1/WEB-INF/lib/spring-aop-4.1.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/untitled1/WEB-INF/lib/spring-security-core-3.2.0.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/untitled1/WEB-INF/lib/commons-logging-1.1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/untitled1/WEB-INF/lib/spring-tx-4.1.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/untitled1/WEB-INF/lib/spring-expression-4.1.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/untitled1/WEB-INF/lib/spring-web-4.1.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/untitled1/WEB-INF/lib/spring-core-4.1.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/untitled1/WEB-INF/lib/aopalliance-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/untitled1/WEB-INF/lib/spring-context-4.1.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/untitled1/WEB-INF/lib/spring-security-config-3.2.0.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/untitled1/WEB-INF/lib/spring-security-acl-3.2.0.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/untitled1/WEB-INF/lib/spring-orm-4.1.1.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
