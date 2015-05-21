@@ -1,0 +1,38 @@
+DROP TABLE IF EXISTS `coffeeTable`;
+create table coffeeTable (
+coffeeId int(6) primary key auto_increment,
+coffeeType varchar(30) not null,
+price int(6),
+description varchar(1000)
+);
+
+insert into coffeetable (coffeeId, coffeeType, price, description) values (1, "CAPPUCCINO", 1000, "qwerwer");
+insert into coffeetable (coffeeId, coffeeType, price, description) values (2, "CAPPUCCINO", 1100, "sdafasdf");
+insert into coffeetable (coffeeId, coffeeType, price, description) values (3, "DECAFF", 3000, "axcvxcvc");
+insert into coffeetable (coffeeId, coffeeType, price, description) values (4, "CAPPUCCINO", 5000, "fddgdfg");
+
+____________________
+
+
+DROP TABLE IF EXISTS `additiveTable`;
+create table additiveTable (
+additiveId int(6) primary key auto_increment,
+additiveName varchar(150) not null,
+price int(6),
+description varchar(1000)
+);
+
+insert into additiveTable (additiveId, additiveName, price, description) values (1, "Eggshell", 300, "asdfasfasdf");
+insert into additiveTable (additiveId, additiveName, price, description) values (2, "Butter", 400, "gfdfgsdfhhdfgf");
+insert into additiveTable (additiveId, additiveName, price, description) values (3, "Egg Whites", 500, "gfdfgsdfhhdfgf");
+
+________________________
+
+
+DROP TABLE IF EXISTS `coffeeAdditive`;
+create table coffeeAdditive (
+additiveId int(6) not null,
+coffeeId int(6) not null,
+primary key (additiveId, coffeeId)
+);
+

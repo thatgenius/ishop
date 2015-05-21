@@ -1,6 +1,10 @@
 package com.springapp.mvc.controller;
 
+import com.springapp.mvc.DAO.AdditiveDAO;
+import com.springapp.mvc.DAO.CoffeeDAO;
+import com.springapp.mvc.entity.Additive;
 import com.springapp.mvc.entity.Coffee;
+import com.springapp.mvc.entity.CoffeeCreateForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -17,6 +21,9 @@ public class AdminController {
     @Autowired
     private CoffeeDAO coffeeDAO;
 
+    @Autowired
+    private AdditiveDAO additiveDAO;
+
     @RequestMapping(value = "/")
     public String list(ModelMap model) {
         List<Coffee> resultList = coffeeDAO.findAll();
@@ -25,14 +32,23 @@ public class AdminController {
     }
 
     @RequestMapping(value = "create")
-    public String index(ModelMap model) {
-        model.put("coffee", new Coffee());
+    public String createCoffeePage(ModelMap model) {
+        model.put("coffeeCreateForm", new CoffeeCreateForm());
         model.put("coffeeTypeList", getCoffeeTypeList());
-        return "admin/form";
+        model.put("additiveTypeList", getAdditiveTypeList());
+        return "admin/create";
     }
 
     @RequestMapping(value = "/createNewCoffee", method = RequestMethod.POST)
-    public String createNewCoffee(@ModelAttribute("coffee") Coffee coffee) {
+    public String createCoffee(@ModelAttribute("coffeeCreateForm") CoffeeCreateForm coffeeCreateForm) {
+
+        Coffee coffee = new Coffee(0, coffeeCreateForm.getCoffeeType(), coffeeCreateForm.getDescription(), coffeeCreateForm.getPrice());
+        Additive additive = additiveDAO.getByName(coffeeCreateForm.getAdditiveType());
+        coffee.getAdditives().add(additive);
+
+        coffee.getAdditives().add(additive);
+        additive.getCoffees().add(coffee);
+
         coffeeDAO.save(coffee);
         return "redirect:/admin/";
     }
@@ -49,6 +65,14 @@ public class AdminController {
         List<String> list = new ArrayList<String>();
         list.add("CAPPUCCINO");
         list.add("DECAFF");
+        return list;
+    }
+
+    public List getAdditiveTypeList() {
+        List<String> list = new ArrayList<String>();
+        list.add("Eggshell");
+        list.add("Butter");
+        list.add("Egg Whites");
         return list;
     }
 }

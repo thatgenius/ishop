@@ -13,11 +13,11 @@
 <table border="1" cellpadding="10px" width="100%" style="border-collapse: collapse">
     <c:forEach items="${resultList}" var="c">
         <tr>
-            <td>${c.getId()}</td>
+            <td>${c.getCoffeeId()}</td>
             <td>${c.getCoffeeType()}</td>
             <td>${c.getDescription()}</td>
             <td>${c.getPrice()}</td>
-            <td><a href="/admin/delete?id=${c.id}">delete</a></td>
+            <td><a href="/admin/delete?id=${c.getCoffeeId()}">delete</a></td>
         </tr>
     </c:forEach>
 </table>

@@ -16,7 +16,7 @@
                     <td>${c.getDescription()}</td>
                     <td>${c.getPrice()}</td>
                     <td>${resultMap.get(c)}</td>
-                    <td><a href="/sp/delete?id=${c.getId()}">remove</a></td>
+                    <td><a href="/sp/delete?id=${c.getCoffeeId()}">remove</a></td>
                 </tr>
             </c:forEach>
             <tr>

@@ -14,13 +14,13 @@ import java.util.List;
 public class MainPageController {
 
     @Autowired
-    private CoffeeDAO CoffeeDAO;
+    private com.springapp.mvc.DAO.CoffeeDAO CoffeeDAO;
 
     @RequestMapping(method = RequestMethod.GET)
     public String index(ModelMap model, HttpSession session) {
         List<Coffee> resultList = CoffeeDAO.findAll();
         model.addAttribute("resultList", resultList);
-        return "hello";
+        return "main";
     }
 
     @RequestMapping(value = "login")

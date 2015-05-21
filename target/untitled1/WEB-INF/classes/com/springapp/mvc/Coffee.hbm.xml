@@ -1,0 +1,30 @@
+<!--
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.springapp.mvc.entity.Coffee" table="category" catalog="coffeedatabase">
+        <id name="coffeeId" type="java.lang.Integer">
+            <column name="coffeeId" />
+            <generator class="native" />
+            &lt;!&ndash;identity&ndash;&gt;
+        </id>
+        <property name="coffeeType" type="string">
+            <column name="coffeeType" length="30" not-null="true" />
+        </property>
+        <property name="price" type="java.lang.Integer">
+            <column name="price" not-null="false" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="1000" not-null="false" />
+        </property>
+        <set name="additives" table="coffeeAdditive" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="coffeeId" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.springapp.mvc.entity.Additive">
+                <column name="additiveId" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>-->

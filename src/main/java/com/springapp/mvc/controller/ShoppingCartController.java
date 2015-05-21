@@ -19,7 +19,7 @@ import java.util.Map;
 public class ShoppingCartController {
 
     @Autowired
-    private CoffeeDAO CoffeeDAO;
+    private com.springapp.mvc.DAO.CoffeeDAO CoffeeDAO;
 
     @RequestMapping(value = "/addToCart", method = RequestMethod.POST)
     @ResponseBody
@@ -33,7 +33,7 @@ public class ShoppingCartController {
         } else {
             int amount = 1;
             for (Coffee c : map.keySet()) {
-                if (c.getId() == id) {
+                if (c.getCoffeeId() == id) {
                     amount = map.get(c) + 1;
                     coffee = c;
                     break;
@@ -58,7 +58,7 @@ public class ShoppingCartController {
         Coffee coffee = null;
 
         for (Coffee c : map.keySet()) {
-            if (c.getId() == id) {
+            if (c.getCoffeeId() == id) {
                 coffee = c;
                 break;
             }
