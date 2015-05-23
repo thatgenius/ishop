@@ -51,26 +51,33 @@
 
 
 <%--coffees table--%>
-<table border="3">
-    <c:forEach items="${resultList}" var="coffee">
-        <tr bgcolor="${((n=n+1) % 2 == 0) ? "FFC05F" : "C1AC58"}">
-            <td>
-                    ${coffee.coffeeType} ${coffee.price}
-                    <c:forEach items="${coffee.additives}" var="additive" >
-                        ${additive.additiveName}
-                    </c:forEach> <br/>
-                    <a href="" class="${coffee.coffeeId}" id="addToCart">add to cart</a><br/>
-                        Additives:<br/>
-                        <div id="additives">
-                            <input type="checkbox" name="checkbox" value="Eggshell">Eggshell
-                            <input type="checkbox" name="checkbox" value="Butter">Butter
-                            <input type="checkbox" name="checkbox" value="EggWhites">Egg Whites
-                        </div>
-            </td>
-        </tr>
-    </c:forEach>
-</table>
+<table width="100%">
+    <tr>
+        <td width="8%"></td>
+        <td width="84%">
 
+            <table border="0" width="100%">
+                <c:forEach items="${resultList}" var="coffee">
+                    <tr bgcolor="${((n=n+1) % 2 == 0) ? "grey" : "grey"}">
+                        <td>
+                                ${coffee.coffeeType}<br/>
+                                price: ${coffee.price}<br/>
+                                    <c:if test="${coffee.additives.size() != 0}">
+                                    Additives:<br/>
+                                    </c:if>
+                                <c:forEach items="${coffee.additives}" var="additive" >
+                                    ${additive.additiveName}<br/>
+                                </c:forEach>
+                                <a href="" class="${coffee.coffeeId}" id="addToCart">add to cart</a><br/>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </table>
+
+        </td>
+        <td width="8%"></td>
+        </tr>
+    </table>
 <%--ajax request to add coffee to cart--%>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script type="text/javascript">

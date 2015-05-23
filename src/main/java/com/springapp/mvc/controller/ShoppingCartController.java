@@ -1,5 +1,6 @@
 package com.springapp.mvc.controller;
 
+import com.springapp.mvc.DAO.CoffeeDAO;
 import com.springapp.mvc.entity.Coffee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,13 +20,13 @@ import java.util.Map;
 public class ShoppingCartController {
 
     @Autowired
-    private com.springapp.mvc.DAO.CoffeeDAO CoffeeDAO;
+    private CoffeeDAO coffeeDAO;
 
     @RequestMapping(value = "/addToCart", method = RequestMethod.POST)
     @ResponseBody
     public String addCart2(@RequestParam("id") Integer id, HttpSession session) {
         LinkedHashMap<Coffee, Integer> map = (LinkedHashMap<Coffee, Integer>) session.getAttribute("resultMap");
-        Coffee coffee = CoffeeDAO.getById(id);
+        Coffee coffee = coffeeDAO.getById(id);
 
         if (map == null) {
             map = new LinkedHashMap<Coffee, Integer>();

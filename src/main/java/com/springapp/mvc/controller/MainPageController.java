@@ -1,5 +1,6 @@
 package com.springapp.mvc.controller;
 
+import com.springapp.mvc.DAO.CoffeeDAO;
 import com.springapp.mvc.entity.Coffee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,11 +15,11 @@ import java.util.List;
 public class MainPageController {
 
     @Autowired
-    private com.springapp.mvc.DAO.CoffeeDAO CoffeeDAO;
+    private CoffeeDAO coffeeDAO;
 
     @RequestMapping(method = RequestMethod.GET)
     public String index(ModelMap model, HttpSession session) {
-        List<Coffee> resultList = CoffeeDAO.findAll();
+        List<Coffee> resultList = coffeeDAO.findAll();
         model.addAttribute("resultList", resultList);
         return "main";
     }
