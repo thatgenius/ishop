@@ -11,7 +11,7 @@
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <context:component-scan base-package="com.springapp.mvc"/>
+    <context:component-scan base-package="my.app.ishop"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
@@ -35,7 +35,7 @@
         <property name="dataSource" ref="myDataSource"/>
         <property name="packagesToScan">
             <array>
-                <value>com.springapp.mvc</value>
+                <value>my.app.ishop</value>
             </array>
         </property>
         <property name="hibernateProperties">

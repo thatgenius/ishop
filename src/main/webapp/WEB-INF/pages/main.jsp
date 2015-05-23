@@ -6,7 +6,7 @@
 <html>
 <body>
 
-<c:set value="0" var="n"/>
+<c:set value="0" var="colourAlter"/>
 <c:url value="/sp/addToCart" var="addToCart"/>
 <c:url value="/sp/cart" var="cart"/>
 <c:url value="/login" var="signin"/>
@@ -58,16 +58,17 @@
 
             <table border="0" width="100%">
                 <c:forEach items="${resultList}" var="coffee">
-                    <tr bgcolor="${((n=n+1) % 2 == 0) ? "grey" : "grey"}">
+                    <tr bgcolor="${((colourAlter=colourAlter+1) % 2 == 0) ? "#FFDEAD" : "#FFDEAD"}">
                         <td>
                                 ${coffee.coffeeType}<br/>
-                                price: ${coffee.price}<br/>
                                     <c:if test="${coffee.additives.size() != 0}">
-                                    Additives:<br/>
+                                        <div>Additives:
+                                            <c:forEach items="${coffee.additives}" var="additive" >
+                                                ${additive.additiveName}<br/>
+                                            </c:forEach>
+                                        </div>
                                     </c:if>
-                                <c:forEach items="${coffee.additives}" var="additive" >
-                                    ${additive.additiveName}<br/>
-                                </c:forEach>
+                                price: ${coffee.price}<br/>
                                 <a href="" class="${coffee.coffeeId}" id="addToCart">add to cart</a><br/>
                         </td>
                     </tr>
